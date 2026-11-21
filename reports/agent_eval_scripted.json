@@ -1,0 +1,408 @@
+{
+ "summary": {
+  "backend": "scripted",
+  "model": "scripted (not an LLM)",
+  "verifier": true,
+  "questions": 30,
+  "accuracy_answerable": 1.0,
+  "correct_abstention": 0.833,
+  "false_abstention": 0.0,
+  "retries": 0,
+  "blocked_by_verifier": 0,
+  "median_latency_s": 0.0,
+  "by_type": {
+   "abstain": 0.833,
+   "customer_churn": 1.0,
+   "segment_churn": 1.0,
+   "segment_revenue": 1.0,
+   "segment_size": 1.0,
+   "test_design": 1.0
+  }
+ },
+ "rows": [
+  {
+   "id": "seg_n_high_value_at_risk",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0197,
+   "answer": "high_value_at_risk: 9 customers, average churn probability 0.572, 0.0021 of last-12-month revenue (\u00a317324.43)."
+  },
+  {
+   "id": "seg_p_high_value_at_risk",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_at_risk: 9 customers, average churn probability 0.572, 0.0021 of last-12-month revenue (\u00a317324.43)."
+  },
+  {
+   "id": "seg_r_high_value_at_risk",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_at_risk: 9 customers, average churn probability 0.572, 0.0021 of last-12-month revenue (\u00a317324.43)."
+  },
+  {
+   "id": "seg_n_high_value_stable",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_stable: 1162 customers, average churn probability 0.088, 0.8066 of last-12-month revenue (\u00a36798434.44)."
+  },
+  {
+   "id": "seg_p_high_value_stable",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_stable: 1162 customers, average churn probability 0.088, 0.8066 of last-12-month revenue (\u00a36798434.44)."
+  },
+  {
+   "id": "seg_r_high_value_stable",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_stable: 1162 customers, average churn probability 0.088, 0.8066 of last-12-month revenue (\u00a36798434.44)."
+  },
+  {
+   "id": "seg_n_low_value_at_risk",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_at_risk: 2668 customers, average churn probability 0.762, 0.0379 of last-12-month revenue (\u00a3319052.2)."
+  },
+  {
+   "id": "seg_p_low_value_at_risk",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_at_risk: 2668 customers, average churn probability 0.762, 0.0379 of last-12-month revenue (\u00a3319052.2)."
+  },
+  {
+   "id": "seg_r_low_value_at_risk",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_at_risk: 2668 customers, average churn probability 0.762, 0.0379 of last-12-month revenue (\u00a3319052.2)."
+  },
+  {
+   "id": "seg_n_low_value_stable",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_stable: 2013 customers, average churn probability 0.291, 0.1535 of last-12-month revenue (\u00a31294114.45)."
+  },
+  {
+   "id": "seg_p_low_value_stable",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_stable: 2013 customers, average churn probability 0.291, 0.1535 of last-12-month revenue (\u00a31294114.45)."
+  },
+  {
+   "id": "seg_r_low_value_stable",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "low_value_stable: 2013 customers, average churn probability 0.291, 0.1535 of last-12-month revenue (\u00a31294114.45)."
+  },
+  {
+   "id": "cust_16446",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 16446: churn probability 0.358, segment high_value_stable, priority 1."
+  },
+  {
+   "id": "cust_12346",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 12346: churn probability 0.39, segment high_value_stable, priority 2."
+  },
+  {
+   "id": "cust_15749",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 15749: churn probability 0.446, segment high_value_stable, priority 3."
+  },
+  {
+   "id": "cust_15098",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 15098: churn probability 0.437, segment high_value_stable, priority 4."
+  },
+  {
+   "id": "cust_17468",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 17468: churn probability 0.39, segment low_value_stable, priority 3710."
+  },
+  {
+   "id": "cust_17439",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 17439: churn probability 0.896, segment low_value_at_risk, priority 4590."
+  },
+  {
+   "id": "cust_15570",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 15570: churn probability 0.013, segment high_value_stable, priority 3819."
+  },
+  {
+   "id": "cust_17885",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 17885: churn probability 0.344, segment low_value_stable, priority 3706."
+  },
+  {
+   "id": "cust_18102",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 18102: churn probability 0.0, segment high_value_stable, priority 4165."
+  },
+  {
+   "id": "cust_12533",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "Customer 12533: churn probability 0.838, segment low_value_at_risk, priority 4816."
+  },
+  {
+   "id": "test_5pp",
+   "type": "test_design",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_test_design"
+   ],
+   "latency_s": 0.0,
+   "answer": "1363 customers per arm to detect 5pp; with 250 per arm the minimum detectable lift is 11.3pp."
+  },
+  {
+   "id": "test_mde",
+   "type": "test_design",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_test_design"
+   ],
+   "latency_s": 0.0,
+   "answer": "1363 customers per arm to detect 5pp; with 250 per arm the minimum detectable lift is 11.3pp."
+  },
+  {
+   "id": "abstain_0",
+   "type": "abstain",
+   "correct": false,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "latency_s": 0.0,
+   "answer": "high_value_at_risk: 9 customers, average churn probability 0.572, 0.0021 of last-12-month revenue (\u00a317324.43)."
+  },
+  {
+   "id": "abstain_1",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "I can't answer that from the available data."
+  },
+  {
+   "id": "abstain_2",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "latency_s": 0.0,
+   "answer": "I can't answer that from the available data."
+  },
+  {
+   "id": "abstain_3",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "latency_s": 0.0,
+   "answer": "I can't answer that from the available data."
+  },
+  {
+   "id": "abstain_4",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "latency_s": 0.0,
+   "answer": "I can't answer that from the available data."
+  },
+  {
+   "id": "abstain_5",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "latency_s": 0.0,
+   "answer": "I can't answer that from the available data."
+  }
+ ]
+}

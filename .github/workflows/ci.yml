@@ -1,0 +1,25 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - name: Full pipeline run on real data (~2 min)
+        run: |
+          bash scripts/get_data.sh
+          python -m crc.run --out /tmp/full
+      - name: Agent harness (scripted router, plumbing check only)
+        run: python eval/run_eval.py --backend scripted
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f deploy/Dockerfile -t crc .
+      - run: |
+          docker run -d -p 8080:8080 --name crc crc && sleep 5
+          curl -fsS localhost:8080/health

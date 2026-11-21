@@ -1,0 +1,241 @@
+{
+ "data": {
+  "source": "UCI Online Retail II (Chen, 2012), CC BY 4.0",
+  "raw_rows": 824364,
+  "cancelled_invoices": 18744,
+  "non_positive_quantity": 0,
+  "non_positive_price": 71,
+  "non_product_codes": 2915,
+  "exact_duplicates": 26055,
+  "clean_rows": 776579,
+  "removed_pct": 5.8,
+  "customers": 5852,
+  "orders": 36594,
+  "first_day": "2009-12-01",
+  "last_day": "2011-12-09"
+ },
+ "clv_holdout": {
+  "customers": 4921,
+  "params": {
+   "r": 0.6881,
+   "alpha": 66.8008,
+   "a": 0.0869,
+   "b": 1.2826
+  },
+  "penalizer": 0.001,
+  "gamma_gamma_q": 0.889,
+  "order_value_method": "shrunk observed mean (Gamma-Gamma q <= 1)",
+  "total_repeat_orders": {
+   "predicted": 7832.0,
+   "actual": 8018
+  },
+  "mae_orders": {
+   "bgnbd": 1.075,
+   "naive_rate": 1.118
+  },
+  "spearman_revenue": {
+   "bgnbd_x_order_value": 0.63,
+   "last_188d_revenue": 0.566
+  },
+  "top10pct_revenue_capture": {
+   "bgnbd_x_order_value": 0.6146,
+   "last_188d_revenue": 0.5936
+  },
+  "one_time_buyers": {
+   "customers": 1609,
+   "p_alive_assigned": 1.0
+  }
+ },
+ "churn": {
+  "train_cutoff": "2010-11-29",
+  "test_cutoff": "2011-06-05",
+  "horizon_days": 188,
+  "train_customers": 4215,
+  "test_customers": 4921,
+  "churn_rate": {
+   "train": 0.5068,
+   "test": 0.4739
+  },
+  "one_time_buyer_churn_rate_test": 0.7278,
+  "repeat_buyer_churn_rate_test": 0.3505,
+  "validation_auc": {
+   "logistic": 0.7975,
+   "lightgbm": 0.7784
+  },
+  "champion_chosen_on_validation": "logistic",
+  "test": {
+   "bgnbd_1_minus_p_alive": {
+    "roc_auc": 0.4426,
+    "pr_auc": 0.5397,
+    "brier": 0.4012,
+    "ece": 0.382
+   },
+   "logistic": {
+    "roc_auc": 0.8044,
+    "pr_auc": 0.7578,
+    "brier": 0.19,
+    "ece": 0.0969
+   },
+   "lightgbm_raw": {
+    "roc_auc": 0.7887,
+    "pr_auc": 0.7439,
+    "brier": 0.1905,
+    "ece": 0.0622
+   },
+   "lightgbm_calibrated": {
+    "roc_auc": 0.7852,
+    "pr_auc": 0.7174,
+    "brier": 0.1921,
+    "ece": 0.0662
+   }
+  },
+  "lightgbm_minus_logistic_auc": {
+   "auc_diff": -0.0156,
+   "ci95": [
+    -0.0227,
+    -0.0084
+   ]
+  }
+ },
+ "survival": {
+  "kaplan_meier_by_orders": {
+   "1 order": {
+    "customers": 1609,
+    "median_days_to_next_order": null,
+    "share_ordering_within_90d": 0.119
+   },
+   "11+": {
+    "customers": 457,
+    "median_days_to_next_order": 17.0,
+    "share_ordering_within_90d": 0.832
+   },
+   "2-3": {
+    "customers": 1442,
+    "median_days_to_next_order": null,
+    "share_ordering_within_90d": 0.25
+   },
+   "4-10": {
+    "customers": 1413,
+    "median_days_to_next_order": 95.0,
+    "share_ordering_within_90d": 0.485
+   }
+  },
+  "cox": {
+   "concordance": 0.745,
+   "hazard_ratios": {
+    "log_recency": {
+     "hr": 0.7785,
+     "ci95": [
+      0.752,
+      0.806
+     ],
+     "p": 0.0
+    },
+    "log_frequency": {
+     "hr": 1.8973,
+     "ci95": [
+      1.7681,
+      2.0359
+     ],
+     "p": 0.0
+    },
+    "log_revenue_365d": {
+     "hr": 1.1788,
+     "ci95": [
+      1.1432,
+      1.2155
+     ],
+     "p": 0.0
+    },
+    "return_rate": {
+     "hr": 1.0419,
+     "ci95": [
+      0.9293,
+      1.1682
+     ],
+     "p": 0.4816
+    },
+    "is_uk": {
+     "hr": 0.9189,
+     "ci95": [
+      0.8013,
+      1.0537
+     ],
+     "p": 0.2259
+    }
+   }
+  }
+ },
+ "targeting": {
+  "k": 500,
+  "random": {
+   "share_of_lost_revenue": 0.1022
+  },
+  "highest_recency": {
+   "churners_reached": 434,
+   "lost_revenue_reached_gbp": 0.0,
+   "share_of_lost_revenue": 0.0
+  },
+  "highest_p_churn": {
+   "churners_reached": 433,
+   "lost_revenue_reached_gbp": 0.0,
+   "share_of_lost_revenue": 0.0
+  },
+  "value_at_risk": {
+   "churners_reached": 172,
+   "lost_revenue_reached_gbp": 585443.0,
+   "share_of_lost_revenue": 0.4351
+  },
+  "test_design": {
+   "targeted_base_retention": 0.656,
+   "customers_per_arm_if_split": 250,
+   "min_detectable_lift_pp_at_250_per_arm": 11.3,
+   "customers_per_arm_for_5pp": 1363,
+   "customers_per_arm_for_10pp": 324,
+   "alpha": 0.05,
+   "power": 0.8
+  }
+ },
+ "segments_as_of_end": [
+  {
+   "segment": "high_value_at_risk",
+   "customers": 9,
+   "avg_p_churn": 0.572,
+   "revenue_last_365d_gbp": 17324.43,
+   "avg_orders": 1.556,
+   "predicted_revenue_next_188d_gbp": 2645.074,
+   "avg_recency_days": 198.778,
+   "share_of_revenue": 0.0021
+  },
+  {
+   "segment": "high_value_stable",
+   "customers": 1162,
+   "avg_p_churn": 0.088,
+   "revenue_last_365d_gbp": 6798434.44,
+   "avg_orders": 15.412,
+   "predicted_revenue_next_188d_gbp": 3119072.335,
+   "avg_recency_days": 36.229,
+   "share_of_revenue": 0.8066
+  },
+  {
+   "segment": "low_value_at_risk",
+   "customers": 2668,
+   "avg_p_churn": 0.762,
+   "revenue_last_365d_gbp": 319052.2,
+   "avg_orders": 1.858,
+   "predicted_revenue_next_188d_gbp": 329300.064,
+   "avg_recency_days": 373.01,
+   "share_of_revenue": 0.0379
+  },
+  {
+   "segment": "low_value_stable",
+   "customers": 2013,
+   "avg_p_churn": 0.291,
+   "revenue_last_365d_gbp": 1294114.45,
+   "avg_orders": 4.967,
+   "predicted_revenue_next_188d_gbp": 962328.762,
+   "avg_recency_days": 67.366,
+   "share_of_revenue": 0.1535
+  }
+ ]
+}
