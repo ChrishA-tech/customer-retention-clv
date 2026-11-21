@@ -1,0 +1,562 @@
+{
+ "summary": {
+  "backend": "ollama",
+  "model": "qwen2.5:7b",
+  "verifier": true,
+  "questions": 30,
+  "accuracy_answerable": 1.0,
+  "correct_abstention": 1.0,
+  "false_abstention": 0.0,
+  "retries": 0,
+  "blocked_by_verifier": 0,
+  "median_latency_s": 1.895,
+  "by_type": {
+   "abstain": 1.0,
+   "customer_churn": 1.0,
+   "segment_churn": 1.0,
+   "segment_revenue": 1.0,
+   "segment_size": 1.0,
+   "test_design": 1.0
+  },
+  "accuracy_answerable_original_scorer": 0.458,
+  "rescored": "percent answers (57.2%) now match probabilities (0.572); answers unchanged"
+ },
+ "rows": [
+  {
+   "id": "seg_n_high_value_at_risk",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "high_value_at_risk"
+    }
+   ],
+   "latency_s": 4.45,
+   "answer": "There are 9 customers in the high value at risk segment.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_p_high_value_at_risk",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "high_value_at_risk"
+    }
+   ],
+   "latency_s": 1.98,
+   "answer": "The average churn probability in the high value at risk segment is 57.2%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "seg_r_high_value_at_risk",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "high_value_at_risk"
+    }
+   ],
+   "latency_s": 2.25,
+   "answer": "The high value at risk segment brought in \u00a317,324.43 over the last 12 months.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_n_high_value_stable",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "list_segments"
+   ],
+   "tool_args": [
+    {}
+   ],
+   "latency_s": 1.34,
+   "answer": "There are 1162 customers in the high value stable segment.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_p_high_value_stable",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "high_value_stable"
+    }
+   ],
+   "latency_s": 1.89,
+   "answer": "The average churn probability in the high value stable segment is 8.8%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "seg_r_high_value_stable",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "high_value_stable"
+    }
+   ],
+   "latency_s": 2.31,
+   "answer": "The high value stable segment brought in \u00a36,798,434.44 over the last 12 months.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_n_low_value_at_risk",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "list_segments"
+   ],
+   "tool_args": [
+    {}
+   ],
+   "latency_s": 1.3,
+   "answer": "2668 customers are in the low value at risk segment.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_p_low_value_at_risk",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "low_value_at_risk"
+    }
+   ],
+   "latency_s": 1.99,
+   "answer": "The average churn probability in the low value at risk segment is 76.2%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "seg_r_low_value_at_risk",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "low_value_at_risk"
+    }
+   ],
+   "latency_s": 2.3,
+   "answer": "The low value at risk segment brought in \u00a3319,052.20 over the last 12 months.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_n_low_value_stable",
+   "type": "segment_size",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "list_segments"
+   ],
+   "tool_args": [
+    {}
+   ],
+   "latency_s": 1.34,
+   "answer": "There are 2013 customers in the low value stable segment.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "seg_p_low_value_stable",
+   "type": "segment_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "low_value_stable"
+    }
+   ],
+   "latency_s": 1.91,
+   "answer": "The average churn probability in the low value stable segment is 29.1%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "seg_r_low_value_stable",
+   "type": "segment_revenue",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_segment_summary"
+   ],
+   "tool_args": [
+    {
+     "segment": "low_value_stable"
+    }
+   ],
+   "latency_s": 2.3,
+   "answer": "The low value stable segment brought in \u00a31,294,114.45 over the last 12 months.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "cust_16446",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "16446"
+    }
+   ],
+   "latency_s": 1.97,
+   "answer": "The churn probability for customer 16446 is 35.8%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_12346",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "12346"
+    }
+   ],
+   "latency_s": 1.82,
+   "answer": "The churn probability for customer 12346 is 39%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_15749",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "15749"
+    }
+   ],
+   "latency_s": 1.9,
+   "answer": "The churn probability for customer 15749 is 44.6%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_15098",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "15098"
+    }
+   ],
+   "latency_s": 1.94,
+   "answer": "The churn probability for customer 15098 is 43.7%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_17468",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "17468"
+    }
+   ],
+   "latency_s": 1.88,
+   "answer": "The churn probability for customer 17468 is 39%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_17439",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "17439"
+    }
+   ],
+   "latency_s": 2.17,
+   "answer": "The churn probability for customer 17439 is 89.6%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_15570",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "15570"
+    }
+   ],
+   "latency_s": 1.86,
+   "answer": "The churn probability for customer 15570 is 1.3%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_17885",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "17885"
+    }
+   ],
+   "latency_s": 1.9,
+   "answer": "The churn probability for customer 17885 is 34.4%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "cust_18102",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "18102"
+    }
+   ],
+   "latency_s": 1.86,
+   "answer": "The churn probability of customer 18102 is 0.0%.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "cust_12533",
+   "type": "customer_churn",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "12533"
+    }
+   ],
+   "latency_s": 1.9,
+   "answer": "The churn probability for customer 12533 is 83.8%.",
+   "correct_original_scorer": false
+  },
+  {
+   "id": "test_5pp",
+   "type": "test_design",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_test_design"
+   ],
+   "tool_args": [
+    {}
+   ],
+   "latency_s": 1.8,
+   "answer": "A retention test to detect a 5 point lift would need 1363 customers per arm.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "test_mde",
+   "type": "test_design",
+   "correct": true,
+   "abstained": false,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_test_design"
+   ],
+   "tool_args": [
+    {}
+   ],
+   "latency_s": 2.02,
+   "answer": "If we split our 500 priority customers into two arms, the smallest lift we could detect is 11.3%.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_0",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "tool_args": [],
+   "latency_s": 0.51,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_1",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "99999"
+    }
+   ],
+   "latency_s": 1.51,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_2",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "tool_args": [],
+   "latency_s": 0.44,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_3",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "tool_args": [],
+   "latency_s": 0.51,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_4",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [
+    "get_customer"
+   ],
+   "tool_args": [
+    {
+     "customer_id": "00001"
+    }
+   ],
+   "latency_s": 1.51,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  },
+  {
+   "id": "abstain_5",
+   "type": "abstain",
+   "correct": true,
+   "abstained": true,
+   "retried": false,
+   "verified": true,
+   "tools": [],
+   "tool_args": [],
+   "latency_s": 0.51,
+   "answer": "I can't answer that from the available data.",
+   "correct_original_scorer": true
+  }
+ ]
+}

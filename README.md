@@ -12,6 +12,8 @@ UK online gift retailer, served through an API and an LLM analyst agent that may
   0.016 (95% CI 0.008 to 0.023).
 - **A known model failure, measured.** BG/NBD gives every one-time buyer a 100% chance of still being active, yet
   72.8% of them never return; as a churn score it is worse than chance (AUC 0.4426).
+- **A measured analyst agent.** qwen2.5:7b answered all 24 answerable questions correctly and refused all 6 it should
+  (including how much an untested offer would save).
 - **An honest test plan.** The data has no randomised campaign, so the offer's uplift is unknown. A 250 / 250 test on the priority
   list could only detect a **11.3 pp** retention lift; detecting 5 pp needs **1,363 customers per arm**.
 
@@ -80,7 +82,19 @@ results; the agent must refuse questions the data cannot answer, such as how muc
 ```bash
 bash scripts/run_agent_eval.sh      # qwen2.5:7b via Ollama, with and without the verifier
 ```
-CI runs the harness with a scripted keyword router to test the plumbing; that is not a model result. LLM results: _pending a local run_.
+CI runs the harness with a scripted keyword router to test the plumbing; that is not a model result.
+
+**Results: qwen2.5:7b via Ollama, temperature 0** (`reports/agent_eval_qwen2.5_7b*.json`)
+
+| | With verifier | Without verifier |
+|---|---|---|
+| Correct, 24 answerable questions | **100%** | 100% |
+| Correct refusals, 6 unanswerable questions (incl. "how much will the offer save") | 6 / 6 | 6 / 6 |
+| Retries triggered by the verifier | 0 | n/a |
+| Median latency | 1.90 s | 1.88 s |
+
+The first scoring pass reported 45.8% because the scorer did not treat "57.2%" as equal to a probability of 0.572; the answers
+were re-scored after fixing the scorer (both values are kept in the JSON). The model's answers themselves were not changed or re-run.
 
 ## Run
 ```bash
